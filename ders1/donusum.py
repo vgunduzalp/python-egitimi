@@ -7,3 +7,5 @@ yas2 = 34 #int
 
 
 print(float(sehir_kodu))
+
+print("test")
