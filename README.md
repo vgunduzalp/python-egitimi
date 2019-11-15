@@ -1,0 +1,1 @@
+# BilgeAdam Python Eğitimi
