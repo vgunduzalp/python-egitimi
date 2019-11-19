@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Uygulaması</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div id="app">
+
+        <div class="container" style="padding:20px;">
+
+            <div>
+                <input type="text" class="form-control" v-model="gorev" v-on:keyup.enter="gorevEkle" />
+            </div>
+
+            <div>
+                <div class="card" style="margin-top:20px;">
+                  <div class="card-header">
+                    GÖREVLERİM
+                  </div>
+                  <ul class="list-group">
+                      <li class="list-group-item" v-for="item in tamamlanmayanGorevList">
+
+                          <div class="clearfix">
+                              <div class="float-left">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox"  @change="tamamlandi(item)">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                        {{item.yazi}}
+                                      </label>
+                                    </div>
+
+                              </div>
+                              <div class="float-right">
+                                  <button class="btn btn-sm btn-danger" @click="sil(item,false)">SİL</button>
+                              </div>
+                          </div>
+
+                      </li>
+
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+                  <div class="card-header">
+                    TAMAMLANAN GÖREVLERİM
+                  </div>
+                  <ul class="list-group">
+                      <li class="list-group-item"  v-for="item in tamamlananGorevList">
+
+                          <div class="clearfix">
+                              <div class="float-left">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" v-model="item.tamamlandiMi" @change="tamamlanmadi(item)">
+                                      <label class="form-check-label" for="defaultCheck1" style="text-decoration:line-through">
+                                        {{item.yazi}}
+                                      </label>
+                                    </div>
+
+                              </div>
+                              <div class="float-right">
+                                  <button class="btn btn-sm btn-danger" @click="sil(item,true)">SİL</button>
+                              </div>
+                          </div>
+
+                      </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+</div>
+
+
+<script src="todo.js"></script>
+</body>
+</html>

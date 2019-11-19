@@ -7,7 +7,6 @@ c1 = Calisan("ali","demir",100)
 c2 = Calisan("mehmet","ak",200)
 c3 = Calisan("veysel","gunduzalp",300)
 
-
 m1 = Mudur()
 
 m1.kasaya_para_ekle(100)

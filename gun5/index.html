@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJs Giriş</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .ok{
+            color:green;
+            text-decoration:line-through
+        }
+        .no{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="kapsayici">
+
+    {{message}}
+
+    <span v-text="mesajim"></span>
+
+    <div v-if="messajiGoster">Mesajım</div>
+
+
+    <div>
+        <input type="text" v-model="model1" />
+        <button type="button" v-on:click="yapilacakEkle">EKLE</button>
+        <button type="button" v-on:click="uyeleriGetir">GETİR</button>
+        <br>
+        {{model1}}
+    </div>
+    <ol>
+        <li v-for="item in yapilacaklar">
+            <div v-bind:class="{'ok':item.yapildiMi==true,'no':item.yapildiMi == false}">
+                <span>{{item.yazi}}</span>
+
+                <span v-if="item.yapildiMi == true">YAPILDI</span>
+                <span v-if="item.yapildiMi == false">YAPILMADI</span>
+            </div>
+
+        </li>
+    </ol>
+
+
+    <ol>
+        <li v-for="item in uyeler">
+            <img v-bind:src="item.avatar" style="width:50px;height:50px;border-radius:25px;border:1px solid #ccc;" >
+                <span>{{item.first_name}}</span>
+
+        </li>
+    </ol>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="app.js">
+
+</body>
+</html>
+
+
+
+
+ </script>
