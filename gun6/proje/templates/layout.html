@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block sayfa_baslik %}
+        Sitemiz
+        {% endblock %}
+    </title>
+    <style>
+        #menu{
+            margin:0;padding:0;
+            list-style:none;
+        }
+        #menu li{
+            float:left;
+            padding: 5px 7px;
+            border-right:1px solid #ccc;
+            background:#f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="menu">
+    <li><a href="/anasayfa">Anasayfa</a></li>
+    <li><a href="/uye_detay">Üyeler</a></li>
+</ul>
+<div style="clear:both;"></div>
+
+<div>
+    {% block body %}
+    {% endblock %}
+</div>
+
+
+<div style="margin-top:200px;background:#000;color:#fff;padding:50px;text-align:center;">
+    burası footerdır
+</div>
+
+</body>
+</html>

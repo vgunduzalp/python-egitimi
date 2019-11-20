@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Sayfası</title>
+</head>
+<body>
+
+
+<div>Adı : {{data.ad}}</div>
+<div>Soyadi : {{data["soyad"]}}</div>
+<div>Yas : {{data.yas}}</div>
+
+
+{% if data.yas > 20 %}
+<div style="color:red;">Orta Yaş</div>
+{% else %}
+<div style="color:green;">Genç</div>
+{% endif %}
+
+{{ data|length }}
+
+{% for i in range(data.yas) %}
+<div>{{i}}</div>
+{% endfor %}
+
+</body>
+</html>
