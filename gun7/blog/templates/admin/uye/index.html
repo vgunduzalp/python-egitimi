@@ -1,0 +1,35 @@
+{% extends 'admin/layout.html' %}
+
+{% block body %}
+
+
+<div class="">
+
+    <a href="/admin/uye/ekle" class="btn btn-success btn-sm">YENİ ÜYE EKLE</a>
+    <table class="table table-bordered" style="margin-top:5px;">
+        <thead>
+        <tr>
+            <th>Adı Soyadı</th>
+            <th>Email Adresi</th>
+            <th>İşlemler</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{item[3]}}</td>
+                <td>{{item[1]}}</td>
+                <td>
+                    <a href="/admin/uye/ekle/{{item[0]}}" class="btn btn-sm btn-info">GÜNCELLE</a>
+                    <a href="/admin/uye/sil/{{item[0]}}" onclick="return confirm('Kaydı silmek istediğinizden emin misiniz?')" class="btn btn-sm btn-danger">SİL</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}

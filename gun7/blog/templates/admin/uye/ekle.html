@@ -1,0 +1,43 @@
+{% extends 'admin/layout.html' %}
+
+{% block body %}
+
+<div>
+
+
+    <form action="/admin/uye/save" method="post">
+        {% if data != None %}
+        <input type="hidden" name="Id" value="{{data[0]}}" />
+        {% endif %}
+
+
+
+
+        <div class="form-group">
+        <label>Adı Soyadı</label>
+            <input type="text" class="form-control" name="FullName" {% if data != None %} value="{{data[3]}}" {%endif%} >
+          </div>
+
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="Email" {% if data != None %} value="{{data[1]}}" {%endif%} >
+      </div>
+
+        <div class="form-group">
+             <label>Şifre :</label>
+            {% if data != None %}
+                <span style="color:red;">Değiştirmek istemiyorsanız boş bırakın</span>
+            {%endif%}
+
+        <input type="password" class="form-control" name="Password" >
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+
+
+</div>
+
+{% endblock %}
