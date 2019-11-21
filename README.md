@@ -2,6 +2,7 @@
 
 # Bitirme Ödevi - Son Tarih: 28.11.2019
 
+# User  => (Id,Email,Password,FullName)
 
 1. Üye kayıt sırasında fotoğraf yüklenecek
 2. Giriş yapan kullanıcının fotoğrafı sağ üstte görünecek
